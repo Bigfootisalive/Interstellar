@@ -117,7 +117,7 @@ document.addEventListener("DOMContentLoaded", event => {
 });
 // Splash texts
 const SplashT = [
-  "bigfoot9999 was here",
+  "useinterstellar.pages.dev",
   
 ];
 
