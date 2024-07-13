@@ -218,37 +218,6 @@ function reload() {
   }
 }
 
-// Popout
-function popout() {
-  const activeIframe = document.querySelector("#iframe-container iframe.active");
-  if (activeIframe) {
-    const newWindow = window.open("about:blank", "_blank");
-    if (newWindow) {
-      const name = localStorage.getItem("name") || "My Drive - Google Drive";
-      const icon =
-        localStorage.getItem("icon") ||
-        "https://ssl.gstatic.com/docs/doclist/images/drive_2022q3_32dp.png";
-      newWindow.document.title = name;
-      const link = newWindow.document.createElement("link");
-      link.rel = "icon";
-      link.href = encodeURI(icon);
-      newWindow.document.head.appendChild(link);
-
-      const newIframe = newWindow.document.createElement("iframe");
-      const style = newIframe.style;
-      style.position = "fixed";
-      style.top = style.bottom = style.left = style.right = 0;
-      style.border = style.outline = "none";
-      style.width = style.height = "100%";
-
-      newIframe.src = activeIframe.src;
-
-      newWindow.document.body.appendChild(newIframe);
-    }
-  } else {
-    console.error("No active iframe found");
-  }
-}
 
 function erudaToggle() {
   const activeIframe = document.querySelector("#iframe-container iframe.active");
